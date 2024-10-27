@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PIM_Fluxograma_Primeiro_Semestre"/>
+        <attribute name="authors" value="Kauan (Games)"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-27 07:19:47 PM"/>
+        <attribute name="created" value="S2F1YW4gKEdhbWVzKTtERVNLVE9QLTlNNUo2OEo7MjAyNC0xMC0yNzswNjozODo0NiBQTTszNDE5"/>
+        <attribute name="edited" value="S2F1YW4gKEdhbWVzKTtERVNLVE9QLTlNNUo2OEo7MjAyNC0xMC0yNzswNzoxOTo0NyBQTTsxOzM1Mjg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;----------------------------------------------------------&quot; &amp; ToChar(13) &amp; &quot;HORTI FRUTI&quot; &amp;ToChar(13) &amp; &quot;----------------------------------------------------------&quot;" newline="True"/>
+            <declare name="nome, sobrenome, anoNasc, numeroFav, usuario, senha" type="String" array="False" size=""/>
+            <output expression="&quot;Insira o nome do funcionario: &quot;" newline="True"/>
+            <input variable="nome"/>
+            <output expression="&quot;Insira o sobrenome do funcion&#225;rio: &quot;" newline="True"/>
+            <input variable="sobrenome"/>
+            <output expression="&quot;Insira o ano de nascimento do funcion&#225;rio: &quot;" newline="True"/>
+            <input variable="anoNasc"/>
+            <output expression="&quot;Insira o n&#250;mero favorito do funcion&#225;rio: &quot;" newline="True"/>
+            <input variable="numeroFav"/>
+            <assign variable="usuario" expression="nome &amp; sobrenome &amp; anoNasc"/>
+            <assign variable="senha" expression="nome &amp; sobrenome &amp; numeroFav"/>
+            <output expression="&quot;O usuario tempor&#225;rio &#233;: &quot; &amp; usuario" newline="True"/>
+            <output expression="&quot;A senha tempor&#225;ria &#233;: &quot; &amp; senha" newline="True"/>
+            <output expression="&quot;Insira o usu&#225;rio: &quot;" newline="True"/>
+            <declare name="inputUsuario, inputSenha" type="String" array="False" size=""/>
+            <input variable="inputUsuario"/>
+            <output expression="&quot;Insira a senha: &quot;" newline="True"/>
+            <input variable="inputSenha"/>
+            <if expression="(inputSenha == senha) &amp;&amp; (inputUsuario == usuario)">
+                <then>
+                    <output expression="&quot;Login bem-sucedido!&quot;" newline="True"/>
+                    <declare name="frutas1" type="String" array="True" size="5"/>
+                    <assign variable="frutas1[0]" expression="&quot;Banana&quot;"/>
+                    <assign variable="frutas1[0]" expression="&quot;Bananas&quot;"/>
+                    <declare name="frutas2" type="String" array="True" size="3"/>
+                    <declare name="legumes1" type="String" array="True" size="5"/>
+                    <declare name="legumes2" type="String" array="True" size="3"/>
+                    <declare name="opcao" type="Integer" array="False" size=""/>
+                    <do expression="opcao != 5">
+                        <output expression="&quot;1 - Compras&quot;" newline="True"/>
+                        <output expression="&quot;2 - Estoque&quot;" newline="True"/>
+                        <output expression="&quot;3 - Excluir Item&quot;" newline="True"/>
+                        <output expression="&quot;4 - Adicionar item&quot;" newline="True"/>
+                        <output expression="&quot; 5 - Sair&quot;" newline="True"/>
+                        <input variable="opcao"/>
+                        <if expression="opcao == 1">
+                            <then>
+                                <declare name="total" type="Real" array="False" size=""/>
+                                <declare name="selecionarItem" type="Integer" array="False" size=""/>
+                                <output expression="" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="opcao == 2">
+                                    <then/>
+                                    <else>
+                                        <if expression="opcao == 3">
+                                            <then/>
+                                            <else>
+                                                <if expression="opcao == 4">
+                                                    <then/>
+                                                    <else/>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </do>
+                </then>
+                <else>
+                    <output expression="&quot;Login falhou!&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Inicio" type="None" variable="">
+        <parameters/>
+        <body/>
+    </function>
+</flowgorithm>
