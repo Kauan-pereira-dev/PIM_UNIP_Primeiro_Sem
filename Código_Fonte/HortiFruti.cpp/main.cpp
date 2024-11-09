@@ -21,14 +21,14 @@ struct Cliente {
     string telefone;
 };
 
-// Fun��o para exibir menu
+// Função para exibir menu
 void menu_exibicao() {
     cout << "----------------------------------------------------------" << endl;
     cout << "\t\t\tHORTI FRUTI" << endl;
     cout << "----------------------------------------------------------" << endl;
 }
 
-// Fun��o para mostrar os itens
+// Função para mostrar os itens
 void mostrarItens(const vector<Item>& itens) {
     for (size_t i = 0; i < itens.size(); ++i) {
         cout << "[" << i + 1 << "] " << itens[i].nome << " - R$" << itens[i].preco << " (Quantidade: " << itens[i].quantidade << ")";
@@ -39,7 +39,7 @@ void mostrarItens(const vector<Item>& itens) {
     }
 }
 
-// Fun��o para excluir cadastro
+//Função para excluir cadastro
 void excluirItem(vector<Item>& itens) {
     menu_exibicao();
     cout << "ITENS DISPONIVEIS PARA EXCLUIR: " << endl;
@@ -57,7 +57,7 @@ void excluirItem(vector<Item>& itens) {
     }
 }
 
-// Fun��o para adicionar item
+// Função para adicionar item
 void adicionarItem(vector<Item>& itens) {
     Item novoItem;
     cout << "Digite o nome do item: ";
@@ -72,7 +72,7 @@ void adicionarItem(vector<Item>& itens) {
     cout << "Item adicionado com sucesso!" << endl;
 }
 
-// Fun��o para cadastrar cliente
+// Função para cadastrar cliente
 void cadastrarCliente(vector<Cliente>& clientes) {
     Cliente novoCliente;
     cout << "Digite o nome do cliente: ";
@@ -89,7 +89,7 @@ void cadastrarCliente(vector<Cliente>& clientes) {
     cout << "Cliente cadastrado com sucesso!" << endl;
 }
 
-// Fun��o para procurar cliente
+// Função para procurar cliente
 void procurarCliente(const vector<Cliente>& clientes) {
     string cpf;
     cout << "Digite o CPF do cliente que deseja procurar: ";
@@ -106,7 +106,7 @@ void procurarCliente(const vector<Cliente>& clientes) {
     cout << "Cliente n�o encontrado." << endl;
 }
 
-// Fun��o para realizar compras
+// Função para realizar compras
 void realizarCompras(vector<Item>& itens) {
     menu_exibicao();
     double total = 0.0;
@@ -144,7 +144,7 @@ void realizarCompras(vector<Item>& itens) {
 
     cout << "TOTAL A PAGAR: R$" << total << endl;
 
-    // Chama a fun��o de pagamento
+    // Chama a Função de pagamento
     string formaPagamento;
     cout << "Escolha a forma de pagamento (dinheiro/cartao): ";
     cin >> formaPagamento;
@@ -158,24 +158,24 @@ void realizarCompras(vector<Item>& itens) {
     }
 }
 
-// Fun��o de estoque
+// Função de estoque
 void estoque(const vector<Item>& itens) {
     menu_exibicao();
     cout << "ITENS DISPONIVEIS: " << endl;
     mostrarItens(itens);
 }
 
-// Fun��o principal
+// Função principal
 int main() {
-    setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL, "Portuguese"); //uso de letras e acentuação do portugues br
     menu_exibicao();
 
     // Inicializa itens
     vector<Item> itens = {
         {"Banana", 2.7, 200},
-        {"Maca", 2.0, 200},
+        {"Maçã", 2.0, 200},
         {"Laranja", 1.7, 200},
-        {"Limao", 5.1, 200},
+        {"Limão", 5.1, 200},
         {"Abacaxi", 6.5, 200},
         {"Cebola", 3.2, 100},
         {"Cenoura", 3.5, 100},
