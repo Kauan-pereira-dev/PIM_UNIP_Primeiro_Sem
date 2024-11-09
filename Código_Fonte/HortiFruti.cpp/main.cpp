@@ -21,25 +21,25 @@ struct Cliente {
     string telefone;
 };
 
-// Função para exibir menu
+// Funï¿½ï¿½o para exibir menu
 void menu_exibicao() {
     cout << "----------------------------------------------------------" << endl;
     cout << "\t\t\tHORTI FRUTI" << endl;
     cout << "----------------------------------------------------------" << endl;
 }
 
-// Função para mostrar os itens
+// Funï¿½ï¿½o para mostrar os itens
 void mostrarItens(const vector<Item>& itens) {
     for (size_t i = 0; i < itens.size(); ++i) {
         cout << "[" << i + 1 << "] " << itens[i].nome << " - R$" << itens[i].preco << " (Quantidade: " << itens[i].quantidade << ")";
         if (itens[i].quantidade < 0.3 * itens[i].capacidade_inicial) {
-            cout << " - Necessário comprar";
+            cout << " - Necessï¿½rio comprar";
         }
         cout << endl;
     }
 }
 
-// Função para excluir cadastro
+// Funï¿½ï¿½o para excluir cadastro
 void excluirItem(vector<Item>& itens) {
     menu_exibicao();
     cout << "ITENS DISPONIVEIS PARA EXCLUIR: " << endl;
@@ -51,18 +51,18 @@ void excluirItem(vector<Item>& itens) {
 
     if (selec > 0 && selec <= itens.size()) {
         itens.erase(itens.begin() + selec - 1);
-        cout << "Item excluído com sucesso!" << endl;
+        cout << "Item excluï¿½do com sucesso!" << endl;
     } else {
         cout << "Opcao invalida!" << endl;
     }
 }
 
-// Função para adicionar item
+// Funï¿½ï¿½o para adicionar item
 void adicionarItem(vector<Item>& itens) {
     Item novoItem;
     cout << "Digite o nome do item: ";
     cin >> novoItem.nome;
-    cout << "Digite o preço do item: ";
+    cout << "Digite o preï¿½o do item: ";
     cin >> novoItem.preco;
     cout << "Digite a quantidade do item: ";
     cin >> novoItem.quantidade;
@@ -72,7 +72,7 @@ void adicionarItem(vector<Item>& itens) {
     cout << "Item adicionado com sucesso!" << endl;
 }
 
-// Função para cadastrar cliente
+// Funï¿½ï¿½o para cadastrar cliente
 void cadastrarCliente(vector<Cliente>& clientes) {
     Cliente novoCliente;
     cout << "Digite o nome do cliente: ";
@@ -80,7 +80,7 @@ void cadastrarCliente(vector<Cliente>& clientes) {
     getline(cin, novoCliente.nome);
     cout << "Digite o CPF do cliente: ";
     getline(cin, novoCliente.cpf);
-    cout << "Digite o endereço do cliente: ";
+    cout << "Digite o endereï¿½o do cliente: ";
     getline(cin, novoCliente.endereco);
     cout << "Digite o telefone do cliente: ";
     getline(cin, novoCliente.telefone);
@@ -89,7 +89,7 @@ void cadastrarCliente(vector<Cliente>& clientes) {
     cout << "Cliente cadastrado com sucesso!" << endl;
 }
 
-// Função para procurar cliente
+// Funï¿½ï¿½o para procurar cliente
 void procurarCliente(const vector<Cliente>& clientes) {
     string cpf;
     cout << "Digite o CPF do cliente que deseja procurar: ";
@@ -99,14 +99,14 @@ void procurarCliente(const vector<Cliente>& clientes) {
     for (const auto& cliente : clientes) {
         if (cliente.cpf == cpf) {
             cout << "Cliente encontrado:\n";
-            cout << "Nome: " << cliente.nome << "\nCPF: " << cliente.cpf << "\nEndereço: " << cliente.endereco << "\nTelefone: " << cliente.telefone << endl;
+            cout << "Nome: " << cliente.nome << "\nCPF: " << cliente.cpf << "\nEndereï¿½o: " << cliente.endereco << "\nTelefone: " << cliente.telefone << endl;
             return;
         }
     }
-    cout << "Cliente não encontrado." << endl;
+    cout << "Cliente nï¿½o encontrado." << endl;
 }
 
-// Função para realizar compras
+// Funï¿½ï¿½o para realizar compras
 void realizarCompras(vector<Item>& itens) {
     menu_exibicao();
     double total = 0.0;
@@ -144,7 +144,7 @@ void realizarCompras(vector<Item>& itens) {
 
     cout << "TOTAL A PAGAR: R$" << total << endl;
 
-    // Chama a função de pagamento
+    // Chama a funï¿½ï¿½o de pagamento
     string formaPagamento;
     cout << "Escolha a forma de pagamento (dinheiro/cartao): ";
     cin >> formaPagamento;
@@ -152,20 +152,20 @@ void realizarCompras(vector<Item>& itens) {
     if (formaPagamento == "dinheiro") {
         cout << "Pagamento realizado com sucesso em dinheiro!" << endl;
     } else if (formaPagamento == "cartao") {
-        cout << "Pagamento realizado com sucesso no cartão!" << endl;
+        cout << "Pagamento realizado com sucesso no cartï¿½o!" << endl;
     } else {
-        cout << "Forma de pagamento inválida!" << endl;
+        cout << "Forma de pagamento invï¿½lida!" << endl;
     }
 }
 
-// Função de estoque
+// Funï¿½ï¿½o de estoque
 void estoque(const vector<Item>& itens) {
     menu_exibicao();
     cout << "ITENS DISPONIVEIS: " << endl;
     mostrarItens(itens);
 }
 
-// Função principal
+// Funï¿½ï¿½o principal
 int main() {
     setlocale(LC_ALL, "Portuguese");
     menu_exibicao();
@@ -224,7 +224,7 @@ int main() {
                 cout << "Saindo..." << endl;
                 break;
             default:
-                cout << "Opcao inválida!" << endl;
+                cout << "Opcao invalida!" << endl;
                 break;
         }
     } while (opcao != 7);
