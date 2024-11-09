@@ -33,7 +33,7 @@ void mostrarItens(const vector<Item>& itens) {
     for (size_t i = 0; i < itens.size(); ++i) {
         cout << "[" << i + 1 << "] " << itens[i].nome << " - R$" << itens[i].preco << " (Quantidade: " << itens[i].quantidade << ")";
         if (itens[i].quantidade < 0.3 * itens[i].capacidade_inicial) {
-            cout << " - Necess�rio comprar";
+            cout << " - Necessario comprar";
         }
         cout << endl;
     }
@@ -51,7 +51,7 @@ void excluirItem(vector<Item>& itens) {
 
     if (selec > 0 && selec <= itens.size()) {
         itens.erase(itens.begin() + selec - 1);
-        cout << "Item exclu�do com sucesso!" << endl;
+        cout << "Item excluido com sucesso!" << endl;
     } else {
         cout << "Opcao invalida!" << endl;
     }
@@ -62,7 +62,7 @@ void adicionarItem(vector<Item>& itens) {
     Item novoItem;
     cout << "Digite o nome do item: ";
     cin >> novoItem.nome;
-    cout << "Digite o pre�o do item: ";
+    cout << "Digite o preco do item: ";
     cin >> novoItem.preco;
     cout << "Digite a quantidade do item: ";
     cin >> novoItem.quantidade;
@@ -80,7 +80,7 @@ void cadastrarCliente(vector<Cliente>& clientes) {
     getline(cin, novoCliente.nome);
     cout << "Digite o CPF do cliente: ";
     getline(cin, novoCliente.cpf);
-    cout << "Digite o endere�o do cliente: ";
+    cout << "Digite o endereco do cliente: ";
     getline(cin, novoCliente.endereco);
     cout << "Digite o telefone do cliente: ";
     getline(cin, novoCliente.telefone);
@@ -99,11 +99,11 @@ void procurarCliente(const vector<Cliente>& clientes) {
     for (const auto& cliente : clientes) {
         if (cliente.cpf == cpf) {
             cout << "Cliente encontrado:\n";
-            cout << "Nome: " << cliente.nome << "\nCPF: " << cliente.cpf << "\nEndere�o: " << cliente.endereco << "\nTelefone: " << cliente.telefone << endl;
+            cout << "Nome: " << cliente.nome << "\nCPF: " << cliente.cpf << "\nEndereco: " << cliente.endereco << "\nTelefone: " << cliente.telefone << endl;
             return;
         }
     }
-    cout << "Cliente n�o encontrado." << endl;
+    cout << "Cliente nao encontrado." << endl;
 }
 
 // Função para realizar compras
@@ -152,9 +152,9 @@ void realizarCompras(vector<Item>& itens) {
     if (formaPagamento == "dinheiro") {
         cout << "Pagamento realizado com sucesso em dinheiro!" << endl;
     } else if (formaPagamento == "cartao") {
-        cout << "Pagamento realizado com sucesso no cart�o!" << endl;
+        cout << "Pagamento realizado com sucesso no cartao!" << endl;
     } else {
-        cout << "Forma de pagamento inv�lida!" << endl;
+        cout << "Forma de pagamento invalida!" << endl;
     }
 }
 
