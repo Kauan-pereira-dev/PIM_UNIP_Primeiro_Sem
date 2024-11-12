@@ -34,7 +34,8 @@ void menu_exibicao() {
 // Função para mostrar os itens
 void mostrarItens(const vector<Item>& itens) {
     for (size_t i = 0; i < itens.size(); ++i) {
-        cout << "[" << i + 1 << "] " << itens[i].nome << " - R$" << itens[i].preco << " (Quantidade: " << itens[i].quantidade << ")";
+        cout << "[" << i + 1 << "] " << itens[i].nome << " - R$" << itens[i].preco 
+        << " (Quantidade: " << itens[i].quantidade << ")";
         if (itens[i].quantidade < 0.3 * itens[i].capacidade_inicial) {
             cout << " - Necessario comprar";
         }
