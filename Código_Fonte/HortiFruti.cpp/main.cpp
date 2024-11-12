@@ -1,3 +1,6 @@
+//Programa de gerenciamento de Hort-fruti.
+
+//Inclusão das bibliotecas
 #include <iostream>
 #include <vector>
 #include <string>
@@ -5,7 +8,7 @@
 #include <locale.h>
 using namespace std;
 
-// Estrutura para Item
+// Estrutura para Item declarada para armazenar os dados dos produtos
 struct Item {
     string nome;
     double preco;
@@ -13,7 +16,7 @@ struct Item {
     int capacidade_inicial; // Adiciona a capacidade inicial do item
 };
 
-// Estrutura para Cliente
+// Estrutura para Cliente declarada para armazenar os dados dos clientes
 struct Cliente {
     string nome;
     string cpf;
